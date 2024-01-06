@@ -5,9 +5,7 @@ import User from "../models/user.model";
 interface IUserRepository {
 
     save(user: User): Promise<number>;
-    //update(user: User): Promise<number>;
-    //delete(user: User): Promise<number>;
-    //login(user: User): Promise<User | undefined>;
+    login(email: string): Promise<User>;
     isEmailExist(email: string): Promise<boolean>;
    
 }
@@ -30,17 +28,25 @@ class UserRepository implements IUserRepository {
         });
     }
 
-    //update(user: User): Promise<number> {
-
-    //}
-
-    // delete(user: User): Promise<number> {
-
-    // }
-    // 
-    // login(user: User): Promise<User | undefined> {
-
-    // }
+    login(email: string): Promise<User> {
+        return new Promise((resolve, reject) => {
+            connection.query<User[]>(
+                "SELECT * FROM USERS WHERE EMAIL = ?",
+                    [email],
+                    (err, res) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            if (res?.length > 0) {
+                                resolve(res?.[0]);
+                            } else { 
+                                reject("User not found");
+                            }
+                        }
+                    }
+                );
+            });
+    }
 
     isEmailExist(email: string): Promise<boolean> {
         return new Promise((resolve, reject) => {
