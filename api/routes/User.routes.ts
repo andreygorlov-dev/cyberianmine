@@ -1,5 +1,5 @@
 import { Router } from "express";
-import UserController from "../controllers/User.controller";
+import UserController from "../controllers/user.controller";
 
 class UserRoutes {
 
@@ -11,7 +11,7 @@ class UserRoutes {
     }
 
     intializeRoutes(){
-
+        this.router.post("/", this.controller.save)
     }
 
 }
