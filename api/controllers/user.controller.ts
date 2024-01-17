@@ -11,7 +11,8 @@ export default class UserController {
     {
         "email": "email",
         "password": "password",
-        "referal": "referal"
+        "fullname": "fullname",
+        "numberphone": "+79999999999"
     }
      */
     async save(req: Request, res: Response) {
@@ -52,7 +53,7 @@ export default class UserController {
 
         try {
             const user = await userRepository.login(req.body.email);
-            const correctPassword = await argon2.verify(user.PASSWORD, req.body.password);
+            const correctPassword = await argon2.verify(user.password, req.body.password);
             if (!correctPassword) {
                 res.status(401).send('Incorrect password');
                 return;
@@ -60,8 +61,8 @@ export default class UserController {
             const expiration = '30m';
     
             const data = {
-                id: user.ID,
-                email: user.EMAIL
+                id: user.id,
+                email: user.email
             };
              
             res.status(200).send({token : jwt.sign({ data }, secret, { expiresIn: expiration })});
@@ -94,7 +95,7 @@ export default class UserController {
         }
 
         const user = await userRepository.login(req.body.email);
-        const correctPassword = await argon2.verify(user.PASSWORD, req.body.password_old);
+        const correctPassword = await argon2.verify(user.password, req.body.password_old);
         if (!correctPassword) {
             res.status(401).send('Incorrect password');
             return;
@@ -110,6 +111,16 @@ export default class UserController {
             });
         }
 
+    }
+
+    async getData(req: Request, res: Response) {
+        try {
+            const id: number = req.app.locals.credential.data.id;
+            const user = await userRepository.getData(id);
+            res.status(200).send(user);
+        } catch (err) {
+            res.status(500).send();
+        }
     }
 
 }
