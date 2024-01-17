@@ -73,4 +73,43 @@ export default class UserController {
         }
     }
 
+    /**
+     {
+        "email": "email",
+        "password_old": "password",
+        "password_new": "password2",
+    } 
+     */
+    async updatePassword(req: Request, res: Response) {
+        if (!req.body) {
+            res.status(400).send({
+                message: "Content can not be empty!"
+            });
+            return;
+        }
+        
+        if (req.body.password_old === req.body.password_new) {
+            res.status(500).send('The new password cannot be similar to the old one');
+            return;
+        }
+
+        const user = await userRepository.login(req.body.email);
+        const correctPassword = await argon2.verify(user.PASSWORD, req.body.password_old);
+        if (!correctPassword) {
+            res.status(401).send('Incorrect password');
+            return;
+        }
+        try {
+            
+            await userRepository.updatePassword(user.ID, await argon2.hash(req.body.password_new));
+            res.status(200).send();
+        } catch (err) {
+            res.status(500).send({
+                message: "Some error occurred while retrieving user.",
+                error: err
+            });
+        }
+
+    }
+
 }

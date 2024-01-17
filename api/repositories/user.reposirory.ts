@@ -6,6 +6,7 @@ interface IUserRepository {
 
     save(user: User): Promise<number>;
     login(email: string): Promise<User>;
+    updatePassword(id: number, passwordNew: string): Promise<number>;
     isEmailExist(email: string): Promise<boolean>;
    
 }
@@ -44,8 +45,24 @@ class UserRepository implements IUserRepository {
                             }
                         }
                     }
-                );
-            });
+            );
+        });
+    }
+
+    updatePassword(id: number, passwordNew: string): Promise<number> {
+        return new Promise((resolve, reject) => {
+            connection.query<ResultSetHeader>(
+                "UPDATE USERS SET PASSWORD = ? WHERE ID = ?",
+                [passwordNew, id],
+                (err, res) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(res.affectedRows)
+                    }
+                }
+            );
+        });
     }
 
     isEmailExist(email: string): Promise<boolean> {
