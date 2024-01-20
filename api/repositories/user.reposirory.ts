@@ -52,7 +52,7 @@ class UserRepository implements IUserRepository {
     login(email: string): Promise<User> {
         return new Promise((resolve, reject) => {
             connection.query<User[]>(
-                "SELECT * FROM USERS WHERE EMAIL = ?",
+                "SELECT * FROM users WHERE email = ?",
                     [email],
                     (err, res) => {
                         if (err) {
