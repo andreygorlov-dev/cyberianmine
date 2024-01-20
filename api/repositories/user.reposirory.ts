@@ -16,7 +16,7 @@ class UserRepository implements IUserRepository {
     save(user: User): Promise<number> {
         return new Promise((resolve, reject) => {
             connection.query<ResultSetHeader>(
-                "INSERT INTO USERS (EMAIL, PASSWORD, FULLNAME, NUMBERPHONE) VALUES(?, ?, ?, ?)",
+                "insert into users (email, password, fullname, numberphone) values(?, ?, ?, ?)",
                 [user.email, user.password, user.fullname, user.numberphone],
                 (err, res) => {
                     if (err) {
@@ -32,7 +32,7 @@ class UserRepository implements IUserRepository {
     getData(id: number): Promise<User> {
         return new Promise((resolve, reject) => {
             connection.query<User[]>(
-                "SELECT * FROM USERS WHERE ID = ?",
+                "select * from users where id = ?",
                     [id],
                     (err, res) => {
                         if (err) {
@@ -52,7 +52,7 @@ class UserRepository implements IUserRepository {
     login(email: string): Promise<User> {
         return new Promise((resolve, reject) => {
             connection.query<User[]>(
-                "SELECT * FROM users WHERE email = ?",
+                "select * from users where email = ?",
                     [email],
                     (err, res) => {
                         if (err) {
@@ -72,7 +72,7 @@ class UserRepository implements IUserRepository {
     updatePassword(id: number, passwordNew: string): Promise<number> {
         return new Promise((resolve, reject) => {
             connection.query<ResultSetHeader>(
-                "UPDATE USERS SET PASSWORD = ? WHERE ID = ?",
+                "update users set password = ? where id = ?",
                 [passwordNew, id],
                 (err, res) => {
                     if (err) {
@@ -88,7 +88,7 @@ class UserRepository implements IUserRepository {
     isEmailExist(email: string): Promise<boolean> {
         return new Promise((resolve, reject) => {
             connection.query<User[]>(
-                "SELECT * FROM USERS WHERE EMAIL = ?",
+                "select * from users where email = ?",
                 [email],
                 (err, res) => {
                     if (err) {
