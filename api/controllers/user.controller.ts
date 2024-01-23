@@ -55,6 +55,7 @@ export default class UserController {
             const user = await userRepository.login(req.body.email);
             const correctPassword = await argon2.verify(user.password, req.body.password);
             if (!correctPassword) {
+                //todo сделать json
                 res.status(401).send('Incorrect password');
                 return;
             }
