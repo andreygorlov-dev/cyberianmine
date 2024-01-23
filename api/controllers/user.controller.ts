@@ -117,6 +117,7 @@ export default class UserController {
         try {
             const id: number = req.app.locals.credential.data.id;
             const user = await userRepository.getData(id);
+            user.password = "";
             res.status(200).send(user);
         } catch (err) {
             res.status(500).send();
