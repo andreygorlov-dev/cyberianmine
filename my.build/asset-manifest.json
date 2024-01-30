@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f87f35e.css",
-    "main.js": "/static/js/main.e397a154.js",
+    "main.css": "/static/css/main.84f384b9.css",
+    "main.js": "/static/js/main.21259eab.js",
     "static/js/787.305809e9.chunk.js": "/static/js/787.305809e9.chunk.js",
     "static/media/right.png": "/static/media/right.08640ed29111d1466b62.png",
     "static/media/DrukCyr-Medium.eot": "/static/media/DrukCyr-Medium.d3ed9c1ccf57848ea1ad.eot",
@@ -23,6 +23,7 @@
     "static/media/DrukCyr-Super.ttf": "/static/media/DrukCyr-Super.91aa38d67b2fd3b508d5.ttf",
     "static/media/stat.svg": "/static/media/stat.945cfbe2c1ce77d3e03802ba7d22d73d.svg",
     "static/media/DrukCyr-Medium.woff": "/static/media/DrukCyr-Medium.ab77ac3851b47c2d2e9a.woff",
+    "static/media/bg.png": "/static/media/bg.6e3b95c05fc78fd3d41a.png",
     "static/media/DrukCyr-HeavyItalic.woff": "/static/media/DrukCyr-HeavyItalic.2b0acf340a3ab3731fa9.woff",
     "static/media/DrukCyr-SuperItalic.woff": "/static/media/DrukCyr-SuperItalic.1e0334f7a8939464c730.woff",
     "static/media/DrukCyr-MediumItalic.woff": "/static/media/DrukCyr-MediumItalic.44426b00b1f11402638c.woff",
@@ -34,6 +35,7 @@
     "static/media/DrukCyr-Bold.woff": "/static/media/DrukCyr-Bold.cbc74c0d57d3a98fb1f0.woff",
     "static/media/bit.svg": "/static/media/bit.beba9faad04daad0ad0813d5fc9340b0.svg",
     "static/media/DrukCyr-HeavyItalic.woff2": "/static/media/DrukCyr-HeavyItalic.5b03a1c6b64243ad00aa.woff2",
+    "static/media/mobit.svg": "/static/media/mobit.912091180c68aa80778bf36002ee7408.svg",
     "static/media/DrukCyr-SuperItalic.woff2": "/static/media/DrukCyr-SuperItalic.bf951450d012ed708b62.woff2",
     "static/media/DrukCyr-MediumItalic.woff2": "/static/media/DrukCyr-MediumItalic.03928d8fc9a007d637cb.woff2",
     "static/media/DrukCyr-Heavy.woff2": "/static/media/DrukCyr-Heavy.dbe98c3c47c45d1ed488.woff2",
@@ -41,6 +43,7 @@
     "static/media/DrukCyr-Super.woff2": "/static/media/DrukCyr-Super.d920c4f48eb0ea0de099.woff2",
     "static/media/DrukCyr-Bold.woff2": "/static/media/DrukCyr-Bold.00654980b35773f4ec3c.woff2",
     "static/media/logo.svg": "/static/media/logo.8be8d7e84e37ec959420c00f6beb13e5.svg",
+    "static/media/log.svg": "/static/media/log.8f9fa82df5595c8f2715a9aa466b7ec0.svg",
     "static/media/ava.svg": "/static/media/ava.8d643001c2048777488dc1d23380cea4.svg",
     "static/media/a4.svg": "/static/media/a4.891ad30ee38e08ce2686c249a2cd6082.svg",
     "static/media/4.svg": "/static/media/4.2df87443063f3550b23e2f8c1390f394.svg",
@@ -59,15 +62,17 @@
     "static/media/th.svg": "/static/media/th.a810b48c80ffa445bbbc.svg",
     "static/media/a1.svg": "/static/media/a1.0ce8cd999c7c6dfc6dde870d75e25c44.svg",
     "static/media/1.svg": "/static/media/1.6015bc94d4deb0ff2d8cb1f151eb5b0f.svg",
+    "static/media/6.svg": "/static/media/6.3249220b652d144d843d8ec1fae6f431.svg",
     "static/media/logout.svg": "/static/media/logout.3249220b652d144d843d8ec1fae6f431.svg",
+    "static/media/strel.svg": "/static/media/strel.c068183b6efda4afef4717b32d97f933.svg",
     "static/media/loop.svg": "/static/media/loop.3ec3bc5c389f7d832796cf7c4bb9f604.svg",
     "static/media/star.svg": "/static/media/star.58f4338a42f044efc3a77856645066d7.svg",
-    "main.5f87f35e.css.map": "/static/css/main.5f87f35e.css.map",
-    "main.e397a154.js.map": "/static/js/main.e397a154.js.map",
+    "main.84f384b9.css.map": "/static/css/main.84f384b9.css.map",
+    "main.21259eab.js.map": "/static/js/main.21259eab.js.map",
     "787.305809e9.chunk.js.map": "/static/js/787.305809e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f87f35e.css",
-    "static/js/main.e397a154.js"
+    "static/css/main.84f384b9.css",
+    "static/js/main.21259eab.js"
   ]
 }
